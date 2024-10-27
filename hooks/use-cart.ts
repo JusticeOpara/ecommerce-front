@@ -30,7 +30,22 @@ const useCart =create(
         removeAll: ()=> set({items: []})
     }),{
         name: 'cart-storage',
-        storage: createJSONStorage(() => localStorage)
+        storage: createJSONStorage(() =>{
+              // Check if window is defined (client-side)
+        
+            if (typeof window !== 'undefined') {
+                return localStorage
+              }
+              // Return a dummy storage for SSR
+              return {
+                getItem: () => null,
+                setItem: () => null,
+                removeItem: () => null,
+              }
+            }
+        )
+
+        
     })
 )
 
