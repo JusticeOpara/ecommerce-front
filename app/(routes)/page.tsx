@@ -4,10 +4,13 @@ import Billboard from "@/components/billboard";
 import ProductList from "@/components/product-list";
 import Container from "@/components/ui/container";
 
+
+
 export const revaildate = 0;
 const HomePage = async () => {
   const products = await getProduct({ isFeatured: true });
-  const billboard = await getBillboard("f7c16561-6c42-4cb7-9def-aa81dd49b7f6");
+  const billboard = await getBillboard("84272adf-735c-48be-a7b5-18fba7e07dd7");
+
   return (
     <Container>
       <div className="space-y-10 pd-10">
