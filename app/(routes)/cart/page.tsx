@@ -9,7 +9,9 @@ import Summary from "./components/summary";
 const CartPage = () => {
   const [isMounted, setIsMounted] = useState(false);
   const cart = useCart();
-  console.log(cart.items, "--cart.item");
+  const cartItems = Array.isArray(cart?.items) ? cart.items : []; // Ensure items is an array
+  console.log(cartItems, "--cart.item");
+  
   useEffect(() => {
     setIsMounted(true);
   }, []);
@@ -19,7 +21,7 @@ const CartPage = () => {
   }
 
   // Ensure cart.items exists before mapping
-  const cartItems = cart?.items || [];
+  
   return (
     <div className="bg-white">
       <Container>
@@ -27,11 +29,11 @@ const CartPage = () => {
           <h1 className="text-3xl font-bold text-black">Shopping Cart</h1>
           <div className="mt-12 lg:grid lg:grid-cols-12 lg:items-start gap-x-12">
             <div className="lg:col-span-7 ">
-              {cartItems?.length === 0 && (
+              {cartItems.length === 0 && (
                 <p className="text-neutral-500">No Item is added to the cart</p>
               )}
               <ul>
-                {cartItems?.map((item) => (
+                {cartItems.map((item) => (
                   <CartItem key={item.id} data={item} />
                 ))}
               </ul>
