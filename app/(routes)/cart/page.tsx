@@ -2,14 +2,14 @@
 
 import Container from "@/components/ui/container";
 import useCart from "@/hooks/use-cart";
- import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import CartItem from "./components/cart-item";
 import Summary from "./components/summary";
 
 const CartPage = () => {
   const [isMounted, setIsMounted] = useState(false);
   const cart = useCart();
-console.log(cart.items,"--cart.item")
+  console.log(cart.items, "--cart.item");
   useEffect(() => {
     setIsMounted(true);
   }, []);
@@ -17,7 +17,6 @@ console.log(cart.items,"--cart.item")
   if (!isMounted) {
     return null;
   }
-
 
   // Ensure cart.items exists before mapping
   const cartItems = cart?.items || [];
@@ -28,7 +27,7 @@ console.log(cart.items,"--cart.item")
           <h1 className="text-3xl font-bold text-black">Shopping Cart</h1>
           <div className="mt-12 lg:grid lg:grid-cols-12 lg:items-start gap-x-12">
             <div className="lg:col-span-7 ">
-              {cartItems.length === 0 && (
+              {cartItems?.length === 0 && (
                 <p className="text-neutral-500">No Item is added to the cart</p>
               )}
               <ul>
@@ -38,7 +37,7 @@ console.log(cart.items,"--cart.item")
               </ul>
             </div>
 
-            <Summary/> 
+            <Summary />
           </div>
         </div>
       </Container>

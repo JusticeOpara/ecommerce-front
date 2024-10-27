@@ -10,7 +10,7 @@ removeItem: (id: string)=> void
 removeAll: () => void
 }
 
-const useCart =create(
+const useCart = create(
     persist<CartStore>((set, get)=> ({
         items: [],
         addItem: (data: Product)=>{
