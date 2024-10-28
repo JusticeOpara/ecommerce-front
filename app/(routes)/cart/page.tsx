@@ -9,8 +9,8 @@ import Summary from "./components/summary";
 const CartPage = () => {
   const [isMounted, setIsMounted] = useState(false);
   const cart = useCart();
-  const cartItems = Array.isArray(cart?.items) ? cart.items : []; // Ensure items is an array
-  console.log(cartItems, "--cart.item");
+   
+
   
   useEffect(() => {
     setIsMounted(true);
@@ -20,6 +20,19 @@ const CartPage = () => {
     return null;
   }
 
+  if (!cart.isInitialized) {
+    return (
+      <div className="bg-white">
+        <Container>
+          <div className="px-4 py-16 sm:px-6 lg:px-8">
+            <p>Loading cart...</p>
+          </div>
+        </Container>
+      </div>
+    );
+  }
+  const cartItems = Array.isArray(cart?.items) ? cart.items : [];
+  console.log(cartItems, "--cart.item");
   // Ensure cart.items exists before mapping
   
   return (
