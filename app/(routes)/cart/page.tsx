@@ -1,5 +1,8 @@
 "use client";
 
+export const dynamic = 'force-dynamic'
+// export const revalidate = 0;
+
 import Container from "@/components/ui/container";
 import useCart from "@/hooks/use-cart";
 import { useEffect, useState } from "react";
