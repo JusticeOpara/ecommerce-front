@@ -1,18 +1,13 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "next.config.js",
-      "use": "@vercel/next"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/cart",
-      "dest": "/cart",
-      "headers": {
-        "cache-control": "no-store"
+    "version": 2,
+    "routes": [
+      { "src": "/cart", "dest": "/(routes)/cart" },
+      { "src": "/(.*)", "dest": "/$1" }
+    ],
+    "builds": [
+      {
+        "src": "next.config.js",
+        "use": "@vercel/next"
       }
-    }
-  ]
-}
+    ]
+  }
