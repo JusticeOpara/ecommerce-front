@@ -7,10 +7,10 @@ import getProducts from "@/actions/get-products";
 import getSizes from "@/actions/get-sizes";
 import Billboard from "@/components/billboard";
 import Container from "@/components/ui/container";
-import Filter from "./components/filter";
+import Filter from "./_components/filter";
 import NoResults from "@/components/ui/no-results";
 import ProductCard from "@/components/ui/product-card";
-import MoblieFilters from "./components/moblie-filters";
+import MoblieFilters from "./_components/moblie-filters";
 
 export const revalidate = 0;
 
