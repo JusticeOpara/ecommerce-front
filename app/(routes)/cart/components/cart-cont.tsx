@@ -49,7 +49,7 @@ const CartCont = () => {
                 <p className="text-neutral-500">No Item is added to the cart</p>
               )}
               <ul>
-                {cartItems.map((item) => (
+                {cartItems?.map((item) => (
                   <CartItem key={item.id} data={item} />
                 ))}
               </ul>

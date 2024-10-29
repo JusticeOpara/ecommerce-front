@@ -2,7 +2,7 @@ import React from 'react'
 
     import CartCont from './components/cart-cont'
 
-const CardPage = () => {
+const CartPage = () => {
   return (
     <>
     <CartCont/>
@@ -10,4 +10,4 @@ const CardPage = () => {
   )
 }
 
-export default CardPage
+export default CartPage
