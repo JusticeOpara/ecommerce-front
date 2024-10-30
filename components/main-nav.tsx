@@ -64,11 +64,7 @@ interface MainNavProps {
 const MainNav: React.FC<MainNavProps> = ({ data }) => {
   const pathname = usePathname();
   const [categories, setCategories] = useState<Category[]>([]);
-  const [routes, setRoutes] = useState<Array<{
-    href: string;
-    label: string;
-    active: boolean;
-  }>>([]);
+  const [routes, setRoutes] = useState<{ href: string; label: string; active: boolean }[]>([]);
 
   useEffect(() => {
     if (!data || data.length === 0) return;
