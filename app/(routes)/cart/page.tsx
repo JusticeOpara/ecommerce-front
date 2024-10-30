@@ -3,8 +3,8 @@
 import Container from "@/components/ui/container";
 import useCart from "@/hooks/use-cart";
 import { useEffect, useState } from "react";
-import CartItem from "./_components/cart-item";
-import Summary from "./_components/summary";
+import CartItem from "./components/cart-item";
+import Summary from "./components/summary";
 
 const CartPage = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -29,6 +29,8 @@ const CartPage = () => {
       </div>
     );
   }
+  // const cartItems = Array.isArray(cart?.items) ? cart.items : [];
+  // console.log(cartItems, "--cart.item");
   const cartItems = Array.isArray(cart?.items) ? cart.items : [];
   console.log(cartItems, "--cart.item");
 
@@ -39,17 +41,22 @@ const CartPage = () => {
           <h1 className="text-3xl font-bold text-black">Shopping Cart</h1>
           <div className="mt-12 lg:grid lg:grid-cols-12 lg:items-start gap-x-12">
             <div className="lg:col-span-7 ">
-              {cartItems.length === 0 && (
+              {/* {cartItems.length === 0 && (
                 <p className="text-neutral-500">No Item is added to the cart</p>
               )}
               <ul>
                 {cartItems?.map((item) => (
                   <CartItem key={item.id} data={item} />
                 ))}
-              </ul>
+              </ul> */}
+              {cartItems.length > 0 ? (
+                cartItems.map((item) => <CartItem key={item.id} data={item} />)
+              ) : (
+                <p className="text-neutral-500">No items in the cart.</p>
+              )}
             </div>
 
-            <Summary />
+            {cartItems.length > 0 && <Summary />}
           </div>
         </div>
       </Container>
