@@ -5,6 +5,7 @@ const nextConfig = {
   images: {
     domains: ["res.cloudinary.com"]
   },
+  ignoreDuringBuilds: true,
   trailingSlash: false,
   basePath: '',
 
