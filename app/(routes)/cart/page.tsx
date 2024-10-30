@@ -3,8 +3,8 @@
 import Container from "@/components/ui/container";
 import useCart from "@/hooks/use-cart";
 import { useEffect, useState } from "react";
-import CartItem from "./components/cart-item";
-import Summary from "./components/summary";
+// import CartItem from "./components/cart-item";
+// import Summary from "./components/summary";
 
 const CartPage = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -49,15 +49,15 @@ const CartPage = () => {
                   <CartItem key={item.id} data={item} />
                 ))}
               </ul> */}
-              {cartItems.length > 0 ? (
+              {/* {cartItems.length > 0 ? (
                 <p>Hreo World</p>
                 // cartItems.map((item) => <CartItem key={item.id} data={item} />)
               ) : (
                 <p className="text-neutral-500">No items in the cart.</p>
-              )}
+              )} */}
             </div>
 
-            {cartItems.length > 0 && <Summary />}
+            {/* {cartItems.length > 0 && <Summary />} */}
           </div>
         </div>
       </Container>
