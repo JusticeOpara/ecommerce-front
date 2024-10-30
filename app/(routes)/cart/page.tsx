@@ -31,7 +31,7 @@ const CartPage = () => {
   }
   // const cartItems = Array.isArray(cart?.items) ? cart.items : [];
   // console.log(cartItems, "--cart.item");
-  const cartItems = Array.isArray(cart?.items) ? cart.items : [];
+  const cartItems = Array.isArray(cart.items) ? cart.items : [];
   console.log(cartItems, "--cart.item");
 
   return (
@@ -50,7 +50,8 @@ const CartPage = () => {
                 ))}
               </ul> */}
               {cartItems.length > 0 ? (
-                cartItems.map((item) => <CartItem key={item.id} data={item} />)
+                <p>Hreo World</p>
+                // cartItems.map((item) => <CartItem key={item.id} data={item} />)
               ) : (
                 <p className="text-neutral-500">No items in the cart.</p>
               )}
