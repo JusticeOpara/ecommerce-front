@@ -12,9 +12,11 @@ interface MainNavProps {
 }
 const MainNav: React.FC<MainNavProps> = ({ data }) => {
   const pathname = usePathname();
-console.log(data,"--data maindata")
+  console.log(data,"--data maindata")
+
+  
   if(!data || data.length === 0){
- return 
+   return null
   }
   const routes = data.map((route) => ({
     href: `/category/${route.id}`,
