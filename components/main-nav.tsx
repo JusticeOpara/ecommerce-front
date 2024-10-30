@@ -12,7 +12,7 @@ interface MainNavProps {
 }
 const MainNav: React.FC<MainNavProps> = ({ data }) => {
   const pathname = usePathname();
-console.log(data,"--data maindata")
+// console.log(data,"--data maindata")
   if(!data || data.length === 0){
  return 
   }
@@ -21,7 +21,7 @@ console.log(data,"--data maindata")
     label: route.name,
     active: pathname === `/category/${route.id}`,
   }));
-  console.log(routes)
+  // console.log(routes)
 
   return (
     <nav className="mx-6 flex items-center space-x-4 lg:space-x-6 ">

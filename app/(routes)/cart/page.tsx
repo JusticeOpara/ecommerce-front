@@ -32,7 +32,7 @@ const CartPage = () => {
   // const cartItems = Array.isArray(cart?.items) ? cart.items : [];
   // console.log(cartItems, "--cart.item");
   const cartItems = Array.isArray(cart.items) ? cart.items : [];
-  console.log(cartItems, "--cart.item");
+  // console.log(cartItems, "--cart.item");
 
   return (
     <div className="bg-white">
