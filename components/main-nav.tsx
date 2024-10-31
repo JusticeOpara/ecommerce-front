@@ -11,10 +11,15 @@ import React, { useEffect, useState } from "react";
 interface MainNavProps {
   data: Category[];
 }
+interface RouteProps{
+  href: string; 
+  label: string; 
+  active: boolean
+}
 
 const MainNav: React.FC<MainNavProps> = ({ data }) => {
   const pathname = usePathname();
-  const [routes, setRoutes] = useState<{ href: string; label: string; active: boolean }[]>([]);
+  const [routes, setRoutes] = useState<RouteProps[]>([]);
 
   useEffect(() => {
     if (data && Array.isArray(data) && data.length > 0) {
@@ -25,7 +30,7 @@ const MainNav: React.FC<MainNavProps> = ({ data }) => {
       }));
       setRoutes(newRoutes);
     } else {
-      setRoutes([]); // Clear routes if data is empty or undefined
+      setRoutes([]); 
     }
   }, [data, pathname]);
 
