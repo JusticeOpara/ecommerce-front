@@ -50,3 +50,18 @@ const MainNav: React.FC<MainNavProps> = ({ data }) => {
 
 export default MainNav;
 
+
+// async function getAllBlogs() {
+//   try {
+//     const url = process.env.BASE_URL;
+//     const res = await fetch(url,{
+//       next: { revalidate: 10 }
+//     });
+//     const data = await res.json();
+//     return data;
+//   } catch (error: unknown) {
+//     console.log(error);
+//     return [];
+//   }
+// }
+
