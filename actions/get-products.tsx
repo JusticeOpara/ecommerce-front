@@ -22,9 +22,6 @@ const getProducts = async (query: Query): Promise<Product[]> => {
   });
   const res = await fetch(url);
 
-  if (!res.ok) {
-    throw new Error(`failed to fetch ${res.status}`);
-  }
   return res.json();
 };
 
