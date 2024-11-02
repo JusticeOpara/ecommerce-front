@@ -33,7 +33,7 @@ import { useEffect, useState } from "react";
 import { Product } from "@/types";
 import React from "react";
 import NoResults from "@/components/ui/no-results";
-import ProductCard from "@/components/ui/product-card";
+// import ProductCard from "@/components/ui/product-card";
 
 interface ProductListProps {
   title: string;
@@ -58,9 +58,9 @@ const ProductList: React.FC<ProductListProps> = ({ title, items }) => {
         md:grid-cols-3 lg:grid-cols-4 gap-4"
       >
       
-     {productItems.map((item) => (
+     {/* {productItems.map((item) => (
           <ProductCard key={item.id} data={item} />
-        ))} 
+        ))}  */}
       </div>
     </div>
   );
